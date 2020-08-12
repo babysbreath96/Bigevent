@@ -52,33 +52,6 @@ $(function() {
         })
     });
 
-    // // 监听登录表单的提交事件
-    // $('#form_login').submit(function(e) {
-    //     // alert('1111')
-    //     // 阻止默认提交
-    //     e.preventDefault();
-    //     // console.log($(this).serialize());
-    //     $.ajax = ({
-    //         url: '/api/login',
-    //         method: 'POST',
-    //         // 快速获取表单数据
-    //         data: $(this).serialize(), // serialize()
-
-    //         success: function(res) {
-    //             alert('1111')
-    //             if (res.status !== 0) {
-    //                 return layer.msg('登录失败')
-    //             }
-    //             // 弹出层组件 内置方法msg() ： 提示信息
-    //             layer.msg('登录成功');
-    //             // 将登录成功后得到的 token 字符串（来自接口文档）保存到localStorage中
-    //             localStorage.setItem('token', res.token);
-    //             // 跳转到后台主页
-    //             location.href = './index.html'
-    //         }
-    //     });
-    // });
-
 
     // 监听登录表单的提交事件
     $('#form_login').submit(function(e) {
@@ -93,6 +66,7 @@ $(function() {
                 if (res.status !== 0) {
                     return layer.msg('登录失败！')
                 }
+                // 弹出层组件 内置方法msg() ： 提示信息
                 layer.msg('登录成功！')
                     // 将登录成功得到的 token 字符串，保存到 localStorage 中
                 localStorage.setItem('token', res.token)
@@ -100,5 +74,5 @@ $(function() {
                 location.href = '/index.html'
             }
         })
-    })
+    });
 })
